@@ -15,6 +15,8 @@ let user = {
 let httpReq
 
 
+
+
 // create user message 
 function sendMessage(messageTxt) {
     let messageEle = document.createElement('div')
@@ -88,7 +90,7 @@ textBox.addEventListener('keypress', (e) => {
 
 
 async function getWeatherReq(lat, long) {
-    let httpReq = await fetch(`
+    httpReq = await fetch(`
     http://api.weatherapi.com/v1/forecast.json?key=a07ba83ab200431d807174630221006&q=${+parseInt(lat)},${+parseInt(long)}&days=1&aqi=no&alerts=no`)
 
     let responseApi = await httpReq.json()
